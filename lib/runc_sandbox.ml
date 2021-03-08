@@ -230,6 +230,8 @@ module Json_config = struct
             ~ty:"tmpfs"
             ~src:"tmpfs"
             ~options:[
+              "nodev";
+              "mode=1777";
               "size=2G";
             ]
         ) tmpfs @
