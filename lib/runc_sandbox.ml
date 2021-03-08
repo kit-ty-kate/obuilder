@@ -230,10 +230,10 @@ module Json_config = struct
             ~ty:"tmpfs"
             ~src:"tmpfs"
             ~options:[
+              "nosuid";
               "nodev";
               "mode=1777";
-              "size=2G";
-              "bs=512";
+              "size=4G";
             ]
         ) tmpfs @
         user_mounts mounts
