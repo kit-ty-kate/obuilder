@@ -233,6 +233,7 @@ module Json_config = struct
               "nodev";
               "mode=1777";
               "size=2G";
+              "bs=512";
             ]
         ) tmpfs @
         user_mounts mounts
