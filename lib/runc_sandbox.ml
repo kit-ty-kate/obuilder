@@ -230,7 +230,7 @@ module Json_config = struct
             ~ty:"tmpfs"
             ~src:"tmpfs"
             ~options:[
-              "size=1G";
+              "size=2G";
             ]
         ) tmpfs @
         user_mounts mounts
