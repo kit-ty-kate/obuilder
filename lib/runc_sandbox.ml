@@ -289,7 +289,7 @@ let run ~cancelled ?stdin:stdin ~log t config results_dir =
   let id = string_of_int !next_id in
   incr next_id;
   Os.with_pipe_from_child @@ fun ~r:out_r ~w:out_w ->
-  let cmd = ["runc"; "--root"; t.runc_state_dir; "run"; id] in
+  let cmd = ["nice"; "-n"; "19"; "runc"; "--root"; t.runc_state_dir; "run"; id] in
   let stdout = `FD_move_safely out_w in
   let stderr = stdout in
   let copy_log = Build_log.copy ~src:out_r ~dst:log in

@@ -25,12 +25,7 @@ let ( / ) = Filename.concat
 
 module Btrfs = struct
   let btrfs ?(sudo=false) args =
-    let args =
-      if sudo then
-        "nice" :: "-n" :: "-10" :: "btrfs" :: args
-      else
-        "btrfs" :: args
-    in
+    let args = "btrfs" :: args in
     let args = if sudo && not running_as_root then "sudo" :: args else args in
     Os.exec ~stdout:`Dev_null args
 
